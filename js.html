@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex justify-center items-center">
+        <div class="grid grid-cols-1 w-full md:w-1/2">
+            <div class="flex flex-col space-y-4">
+                <div class="w-full bg-white rounded shadow p-2">
+                    <h1 class="text-2xl text-gray-800 text-center">Score:</h1>
+                    <h1 class="text-4xl font-bold text-gray-800 text-center" id="score">0</h1>
+                </div> 
+                <div class="flex space-x-4">
+                    <div class="w-full bg-white rounded shadow py-4 px-2 flex justify-center">
+                        <button type="button" onclick="operation('add')" class="bg-transparent text-green-500 border border-2 border-green-500 p-2 rounded hover:bg-green-500 hover:text-white w-1/2">+ 1</button>
+                    </div> 
+                    <div class="w-full bg-white rounded shadow py-4 px-2 flex justify-center">
+                        <button type="button" onclick="operation('minus')" class="bg-transparent text-red-500 border border-2 border-red-500 p-2 rounded hover:bg-red-500 hover:text-white w-1/2">- 1</button>
+                    </div> 
+                </div>
+            </div>     
+        </div>
+    </div>
+    <script>
+        function operation(calcu){
+            const scoreElement = document.getElementById('score');
+            let currentScore = parseInt(scoreElement.textContent);
+
+            let result;
+            switch (calcu){
+                case 'add': 
+                    currentScore++; 
+                break;
+                case 'minus':
+                    currentScore--;
+                break;
+                default:
+                    alert('error');
+                    return;
+            }
+
+            if(currentScore < 0){
+                alert("Error: minumum value");
+                currentScore = 0;
+            }
+            scoreElement.textContent = currentScore;
+        }
+    </script>
+</body>
+</html>
