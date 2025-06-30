@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex flex-col min-h-screen bg-gray-100">
+
+        <!-- Header -->
+        <header class="h-16 bg-blue-600 text-white flex items-center px-6 shadow">
+          <h1 class="text-2xl font-bold">Simple Dashboard</h1>
+        </header>
+      
+        <!-- Main Content Area -->
+        <div class="flex flex-1 flex-col md:flex-row">
+      
+          <!-- Sidebar -->
+          <aside class="bg-white w-full md:w-64 p-6 border-r border-gray-200">
+            <nav class="space-y-4">
+              <a href="#" class="block text-gray-700 hover:text-blue-600 font-semibold">Dashboard</a>
+              <a href="#" class="block text-gray-700 hover:text-blue-600 font-semibold">Users</a>
+              <a href="#" class="block text-gray-700 hover:text-blue-600 font-semibold">Settings</a>
+            </nav>
+          </aside>
+      
+          <!-- Dashboard Main -->
+          <main class="flex-1 p-6">
+            <h2 class="text-xl font-bold mb-4 text-gray-800">Overview</h2>
+      
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <!-- Card 1 -->
+              <div class="bg-white p-4 rounded shadow text-center">
+                <p class="text-gray-600">Total Users</p>
+                <p class="text-2xl font-bold text-blue-600">1,200</p>
+              </div>
+      
+              <!-- Card 2 -->
+              <div class="bg-white p-4 rounded shadow text-center">
+                <p class="text-gray-600">Active Sessions</p>
+                <p class="text-2xl font-bold text-green-600">87</p>
+              </div>
+      
+              <!-- Card 3 -->
+              <div class="bg-white p-4 rounded shadow text-center">
+                <p class="text-gray-600">Revenue</p>
+                <p class="text-2xl font-bold text-yellow-600">$8,540</p>
+              </div>
+            </div>
+          </main>
+        </div>
+      
+        <!-- Footer -->
+        <footer class="h-12 bg-blue-600 text-white flex items-center justify-center text-sm">
+          © 2025 Your Dashboard Inc.
+        </footer>
+      
+      </div>      
+</body>
+</html>
