@@ -6,26 +6,6 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <title>Document</title>
 </head>
-<?php
-$connection = new mysqli("localhost", "root", "", "php");
-
-if ($connection->connect_error) {
-    die("Connection failed: " . $connection->connect_error);
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $firstname = $_POST['firstname'];
-    $gmail = $_POST['gmail'];
-    $location = $_POST['location'];
-
-    $sql = "INSERT INTO Info (Firstname, Gmail, Location, Time_in) VALUES (?, ?, ?, NOW())";
-    $stmt = $connection->prepare($sql);
-    $stmt->bind_param("sss", $firstname, $gmail, $location);
-    $stmt->execute();
-    header("Location: php.php");
-    exit();
-}
-?>
 
 <body class="bg-gray-300">
     <div class="min-h-screen flex justify-center items-center">
@@ -65,11 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </thead>
                         <tbody class="bg-gray-200 text-gray-800 font-bold">
                             <?php
-                                $connection = new mysqli("localhost", "root", "", "php");
-
-                                if ($connection->connect_error) {
-                                    die("Connection failed: " . $connection->connect_error);
-                                }
+                                require 'db.php';
 
                                 $sql = "SELECT * FROM Info";
                                 $result = $connection->query($sql);
@@ -100,13 +76,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </div>
         </div>
     </div>
-    <script>
-    document.querySelector('button[type="submit"]').addEventListener('click', function() {
-        const firstname = document.getElementById('firstname').value;
-        const gmail = document.getElementById('gmail').value;
-        const location = document.getElementById('location').value;
-        alert("NICE ONE");
-    });
-</script>
 </body>
 </html>
