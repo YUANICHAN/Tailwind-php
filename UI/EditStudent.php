@@ -42,7 +42,7 @@ if (isset($_GET['ID'])) {
   </header>
 
   <div class="flex flex-1">
-    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
+    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white md:w-40 lg:w-50 xl:w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
       <a href="Dash.php" class="flex items-center gap-2 p-2 rounded hover:text-indigo-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
@@ -72,7 +72,7 @@ if (isset($_GET['ID'])) {
 
     </aside>
 
-    <main class="flex-1 p-6 sm:ml-60">
+    <main class="flex-1 p-6 sm:ml-40 md:ml-50 lg:ml-55 xl:ml-60">
         <div class="grid grid-cols-1 w-full p-2 bg-gray-200 rounded">
             <div class="my-4 mx-2">
                 <h1 class="text-2xl font-bold text-indigo-950">Edit Students</h1>
@@ -87,37 +87,37 @@ if (isset($_GET['ID'])) {
             <div>
                 <input type="hidden" name="ID" value="<?= htmlspecialchars($student['ID']) ?>">
                 <label class="block text-sm font-semibold mb-1">First Name</label>
-                <input type="text" value="<?= htmlspecialchars($student['first_name']) ?>" placeholder="Enter First Name" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Fname" value="<?= htmlspecialchars($student['first_name']) ?>" placeholder="Enter First Name" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Last Name</label>
-                <input type="text" value="<?= htmlspecialchars($student['last_name']) ?>" placeholder="Enter Last Name" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Lname" value="<?= htmlspecialchars($student['last_name']) ?>" placeholder="Enter Last Name" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Email</label>
-                <input type="email" value="<?= htmlspecialchars($student['email']) ?>" placeholder="Email" class="w-full px-4 py-2 rounded text-black" />
+                <input type="email" name="Email" value="<?= htmlspecialchars($student['email']) ?>" placeholder="Email" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Registration Date</label>
-                <input type="date" value="<?= htmlspecialchars($student['registration_date']) ?>" class="w-full px-4 py-2 rounded text-black" />
+                <input type="date" name="RegDate" value="<?= htmlspecialchars($student['registration_date']) ?>" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">ID.</label>
-                <input type="text" value="<?= htmlspecialchars($student['ID']) ?>" placeholder="ID" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" id="ID" value="<?= htmlspecialchars($student['ID']) ?>" placeholder="ID" class="w-full px-4 py-2 rounded text-black" readonly />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Class</label>
-                <input type="text" value="<?= htmlspecialchars($student['class']) ?>" placeholder="Class" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Class" value="<?= htmlspecialchars($student['class']) ?>" placeholder="Class" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Gender</label>
-                <select class="w-full px-4 py-2 rounded text-black">
+                <select name="Gender" class="w-full px-4 py-2 rounded text-black">
                     <option disabled selected>Gender</option>
                     <option value="Male" <?= $student['gender'] === 'Male' ? 'selected' : '' ?>>Male</option>
                     <option value="Female" <?= $student['gender'] === 'Female' ? 'selected' : '' ?>>Female</option>
@@ -126,27 +126,27 @@ if (isset($_GET['ID'])) {
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Mobile Number</label>
-                <input type="text" value="<?= htmlspecialchars($student['mobile_number']) ?>" placeholder="Mobile Number" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Num" value="<?= htmlspecialchars($student['mobile_number']) ?>" placeholder="Mobile Number" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Parents Name</label>
-                <input type="text" value="<?= htmlspecialchars($student['parents_name']) ?>" placeholder="Parents Name" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Pname" value="<?= htmlspecialchars($student['parents_name']) ?>" placeholder="Parents Name" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Parents Mobile Number</label>
-                <input type="text" value="<?= htmlspecialchars($student['parents_mobile_number']) ?>" placeholder="Parents Mobile Number" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Pnum" value="<?= htmlspecialchars($student['parents_mobile_number']) ?>" placeholder="Parents Mobile Number" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Date of Birth</label>
-                <input type="date" value="<?= htmlspecialchars($student['date_of_birth']) ?>" class="w-full px-4 py-2 rounded text-black" />
+                <input type="date" name="Birth" value="<?= htmlspecialchars($student['date_of_birth']) ?>" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
             <div>
                 <label class="block text-sm font-semibold mb-1">Blood Group</label>
-                <input type="text" value="<?= htmlspecialchars($student['blood_group']) ?>" placeholder="Blood Group" class="w-full px-4 py-2 rounded text-black" />
+                <input type="text" name="Blood" value="<?= htmlspecialchars($student['blood_group']) ?>" placeholder="Blood Group" class="w-full px-4 py-2 rounded text-black" />
             </div>
 
            <div class="md:col-span-2">
@@ -156,7 +156,8 @@ if (isset($_GET['ID'])) {
 
 
             <div class="md:col-span-2 flex items-center gap-2">
-                <input type="file" class="block" />
+                <input type="file" name="pic" class="block" />
+                <img src="<?= $row['profile_file'] ?>" class="w-20 h-20" alt="Student Photo" />
             </div>
 
             <div class="md:col-span-2 flex gap-2">

@@ -19,7 +19,7 @@
   </header>
 
   <div class="flex flex-1">
-    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
+    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white w-30 md:w-40 lg:w-50 xl:w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
       <a href="#" class="flex items-center gap-2 p-2 rounded bg-indigo-900 text-indigo-500 hover:text-indigo-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
@@ -49,12 +49,12 @@
 
     </aside>
 
-    <main class="flex-1 p-6 space-y-8 sm:ml-60">
+    <main class="flex-1 p-6 space-y-8 sm:ml-40 md:ml-50 lg:ml-55 xl:ml-60">
       <div class="flex justify-center">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 w-full md:w-[90%]">
 
           <div class="bg-gray-200 rounded shadow p-4 bg-gray-200 rounded shadow p-4">
-           <div class="flex md:flex-col">
+           <div class="flex flex-col">
             <div class="flex justify-center items-center">
               <svg class="w-20 h-20 flex" fill="currentColor" viewBox="0 0 24 24">
                     <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.01 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
@@ -68,7 +68,7 @@
           </div>
 
           <div class="bg-gray-200 rounded shadow p-4">
-            <div class="flex md:flex-col">
+            <div class="flex flex-col">
               <div class="flex justify-center items-center">
                 <svg class="w-20 h-20 flex" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.01 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
@@ -82,7 +82,7 @@
           </div>
 
           <div class="bg-gray-200 rounded shadow p-4">
-            <div class="flex md:flex-col">
+            <div class="flex flex-col">
               <div class="flex justify-center items-center">
                 <svg class="w-20 h-20 flex" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.01 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
@@ -96,7 +96,7 @@
           </div>
 
           <div class="bg-gray-200 rounded shadow p-4">
-            <div class="flex md:flex-col">
+            <div class="flex flex-col">
               <div class="flex justify-center items-center">
                 <svg class="w-20 h-20 flex" fill="currentColor" viewBox="0 0 24 24">
                       <path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5s-3 1.34-3 3 1.34 3 3 3zM8 11c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 2.01 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/>
@@ -114,14 +114,11 @@
 
      <div class="flex flex-row justify-center">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 w-full md:w-[90%] gap-3">
-
-        <!-- Line or Bar Chart -->
         <div class="p-4 bg-gray-200 rounded col-span-6 lg:col-span-4">
           <h2 class="text-lg font-semibold mb-2">Student Enrollment Over Time</h2>
           <canvas id="lineChart"></canvas>
         </div>
 
-        <!-- Doughnut Chart -->
         <div class="p-4 bg-gray-200 rounded col-span-6 lg:col-span-2">
           <h2 class="text-lg font-semibold mb-2">Gender Distribution</h2>
           <canvas id="genderChart"></canvas>
@@ -129,75 +126,9 @@
 
       </div>
     </div>
-
     </main>
   </div>
-
-  <script>
-    const toggleBtn = document.getElementById('toggleSidebarBtn');
-    const sidebar = document.getElementById('sidebar');
-
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('hidden');
-    });
-
-    const dropdownBtn = document.getElementById('studentDropdownBtn');
-    const dropdownMenu = document.getElementById('studentDropdownMenu');
-    const arrowIcon = document.getElementById('arrowIcon');
-
-    dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-        arrowIcon.classList.toggle('rotate-180');
-    });
-
-    const ctx1 = document.getElementById('lineChart').getContext('2d');
-    new Chart(ctx1, {
-      type: 'line',
-      data: {
-        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-        datasets: [{
-          label: 'Enrolled Students',
-          data: [10, 25, 18, 30, 22],
-          backgroundColor: 'rgba(79, 70, 229, 0.2)',
-          borderColor: 'rgba(79, 70, 229, 1)',
-          borderWidth: 2,
-          tension: 0.3
-        }]
-      },
-      options: {
-        responsive: true,
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-
-  // Doughnut Chart for Gender
-  const ctx2 = document.getElementById('genderChart').getContext('2d');
-  new Chart(ctx2, {
-    type: 'doughnut',
-    data: {
-      labels: ['Male', 'Female'],
-      datasets: [{
-        label: 'Gender',
-        data: [60, 40],
-        backgroundColor: ['#6366F1', '#EC4899'],
-        borderWidth: 1
-      }]
-    },
-    options: {
-      responsive: true,
-      plugins: {
-        legend: {
-          position: 'bottom'
-        }
-      }
-    }
-  });
-  </script>
-
+  <script src="dash.js"></script>
 </body>
 </html>
 

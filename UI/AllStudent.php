@@ -18,7 +18,7 @@
   </header>
 
   <div class="flex flex-1">
-    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
+    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white w-30 md:w-40 lg:w-50 xl:w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
       <a href="Dash.php" class="flex items-center gap-2 p-2 rounded hover:text-indigo-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
@@ -48,7 +48,7 @@
 
     </aside>
 
-    <main class="flex-1 p-6 sm:ml-60">
+    <main class="flex-1 p-6 sm:ml-40 md:ml-50 lg:ml-55 xl:ml-60">
       <div class="grid grid-cols-1 w-full p-2">
         <div class="flex flex-row full bg-gray-100 rounded p-2 gap-4">
           <button class="px-4 py-2 rounded bg-indigo-500 w-[30%] md:w-[20%] lg:w-[20%] xl:w-[10%]">
@@ -96,7 +96,9 @@
                     echo "
                       <tr class='text-center'>
                       <td class='hover:bg-gray-50 p-2'>{$row['ID']}</td>
-                      <td class='hover:bg-gray-50 p-2'>{$row['profile_file']}</td>
+                      <td class='hover:bg-gray-50 p-2 flex justify-center items-center'>
+                        <img src='uploads/{$row['profile_file']}' class='w-10 h-10 rounded-full' alt='Student Photo' />
+                      </td>
                       <td class='hover:bg-gray-50 p-2'>{$row['first_name']}</td>
                       <td class='hover:bg-gray-50 p-2'>{$row['last_name']}</td>
                       <td class='hover:bg-gray-50 p-2'>{$row['email']}</td>
@@ -106,7 +108,7 @@
                       <td class='hover:bg-gray-50 p-2 w-[15%]'>
                         <div class='flex gap-2 justify-evenly'>
                           <a href='EditStudent.php?ID=" . $row["ID"] . "' class='px-4 py-2 rounded bg-green-500'>Update</a>
-                          <a href='delete.php?id=" . $row["ID"] . "' onclick=\"return confirm('Are you sure you want to delete this record?')\" class='px-4 py-2 rounded bg-red-500 text-white'>Delete</a>
+                          <a href='delete.php?id=" . $row["ID"] . "' onclick= 'return AlertDel()' class='px-4 py-2 rounded bg-red-500 text-white'>Delete</a>
                         </div>
                       </td>
                     </tr>
@@ -138,6 +140,10 @@
         dropdownMenu.classList.toggle('hidden');
         arrowIcon.classList.toggle('rotate-180');
     });
+
+    function AlertDel(){
+      return confirm("Are you sure you want to delete???");
+    }
   </script>
 
 </body>

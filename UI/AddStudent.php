@@ -18,7 +18,7 @@
   </header>
 
   <div class="flex flex-1">
-    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
+    <aside id="sidebar" class="fixed top-20 left-0 bg-indigo-950 text-white md:w-40 lg:w-50 xl:w-60 h-[calc(100vh-80px)] overflow-y-auto p-4 space-y-2 hidden sm:block">
       <a href="Dash.php" class="flex items-center gap-2 p-2 rounded hover:text-indigo-500">
         <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
         <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
@@ -48,7 +48,7 @@
 
     </aside>
 
-    <main class="flex-1 p-6 sm:ml-60">
+    <main class="flex-1 p-6 sm:ml-40 md:ml-50 lg:ml-55 xl:ml-60">
         <div class="grid grid-cols-1 w-full p-2 bg-gray-200 rounded">
             <div class="my-4 mx-2">
                 <h1 class="text-2xl font-bold text-indigo-950">Add Students</h1>
@@ -130,7 +130,8 @@
             </div>
 
             <div class="md:col-span-2 flex items-center gap-2">
-                <input type="file" name="pic" class="block" />
+                <input type="file" name="pic" id="picInput" class="block" onchange="previewImage(this, 'previewImg')" />
+                <img id="previewImg" class="w-[20%] h-full object-cover hidden" alt="Student Photo" />
             </div>
 
             <div class="md:col-span-2 flex gap-2">
@@ -140,26 +141,19 @@
         </form>
         </div>
 
+        <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+            <div class="bg-white rounded-lg p-6 shadow-lg text-center max-w-sm">
+                <h2 class="text-lg font-semibold text-green-600 mb-2">Success!</h2>
+                <p class="text-gray-700 mb-4">Student information has been added successfully.</p>
+                <button onclick="closeModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded">
+                    <span>OK</span>
+                </button>
+            </div>
+        </div>
+
     </main>
   </div>
 
-  <script>
-    const toggleBtn = document.getElementById('toggleSidebarBtn');
-    const sidebar = document.getElementById('sidebar');
-
-    toggleBtn.addEventListener('click', () => {
-      sidebar.classList.toggle('hidden');
-    });
-
-    const dropdownBtn = document.getElementById('studentDropdownBtn');
-    const dropdownMenu = document.getElementById('studentDropdownMenu');
-    const arrowIcon = document.getElementById('arrowIcon');
-
-    dropdownBtn.addEventListener('click', () => {
-        dropdownMenu.classList.toggle('hidden');
-        arrowIcon.classList.toggle('rotate-180');
-    });
-  </script>
-
+  <script src="pic.js"></script>
 </body>
 </html>
