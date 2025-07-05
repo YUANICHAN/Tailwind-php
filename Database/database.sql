@@ -1,0 +1,17 @@
+-- CREATE TABLE students (
+--     first_name VARCHAR(100),
+--     last_name VARCHAR(100),
+--     email VARCHAR(150),
+--     registration_date DATE,
+--     ID INT(50) PRIMARY KEY,
+--     class VARCHAR(50),
+--     gender VARCHAR(255),
+--     mobile_number VARCHAR(20),
+--     parents_name VARCHAR(150),
+--     parents_mobile_number VARCHAR(20),
+--     date_of_birth DATE,
+--     blood_group VARCHAR(10),
+--     address TEXT,
+--     profile_file VARCHAR(255), 
+--     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+-- );
