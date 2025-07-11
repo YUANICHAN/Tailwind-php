@@ -1,7 +1,5 @@
 <?php
-    require_once 'CLASSES/shape.php';
-    require_once 'CLASSES/circle.php';
-    require_once 'CLASSES/rectangle.php';
+    require_once 'autoload.php';
 
     $shape = new shapes("Yuan");
     $circle = new circle("yuAN");
